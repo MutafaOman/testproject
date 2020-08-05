@@ -1,12 +1,17 @@
-var mongoose = require('mongoose'),
-    Schema = mongoose.Schema;
+var mongoose = require("mongoose"),
+  Schema = mongoose.Schema;
 
-var modelSchema = new Schema({
-		name: String,
-		img: String,
-		order: Number,
-	},{
-    	timestamps: true,
-  });
+var modelSchema = new Schema(
+  {
+    name: String,
+    img: String,
+    order: Number,
+    section: Number,
+    page: Array,
+  },
+  {
+    timestamps: true,
+  }
+);
 
-module.exports =  mongoose.model('banners', modelSchema);
+module.exports = mongoose.model("banners", modelSchema);

@@ -1,7 +1,7 @@
-const order = require("../models/order.js");
-const user = require("../models/user.js");
+const order = require("../../models/order.js");
+const user = require("../../models/user.js");
 
-exports.index = async (req, res) => {
+exports.dashboards = async (req, res) => {
   let result = await order
     .aggregate([
       {
@@ -35,7 +35,7 @@ exports.index = async (req, res) => {
   let processing = kFormatter(processingfind);
   let shipped = kFormatter(shippedfind);
 
-  res.status(200).json({
+  res.json({
     results: result,
     orderCount: orderCount,
     userCount: userCount,
